@@ -4,6 +4,15 @@ import (
 	"fmt"
 	"sort"
 )
+// veriadic concept
+
+func sum(numbers ...int) int {
+	total := 0
+	for _, number := range numbers {
+	    total += number
+	}
+	return total
+    }
 
 func main() {
 	fmt.Println("welcome to slices")
@@ -33,7 +42,7 @@ func main() {
      fmt.Println(lengthSlice)
 
 
-     myNumber := make([]int , 5  )
+     myNumber := make([]int ,5 , 20 )
 
      myNumber[1] =45
      myNumber[0] = 34
@@ -42,4 +51,17 @@ func main() {
 
    sort.Ints(myNumber)
    fmt.Println(myNumber)
+  
+
+   //  how to delete an element using index method
+   course := []string{"reactJs", "typeScript","ruby","rust", "go"}
+
+   fmt.Println(course)
+
+   var index int = 3
+
+   course = append(course[:index] , course[index+1])
+
+   fmt.Println("new course",course)
+
 }
