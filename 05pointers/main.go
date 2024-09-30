@@ -12,7 +12,8 @@ func main() {
 	myNumber := 25
 
 	prt = &myNumber
-
+         
+	fmt.Println("reference of memory  predefined variable as pointer", *prt)
 	ptr := *prt +4
 
 
@@ -27,6 +28,4 @@ func main() {
 
 	fmt.Println("reference of memory  predefined variable as pointer",pointer )
 	fmt.Println("value of pointer variable ", *pointer) 
-
-
 }
