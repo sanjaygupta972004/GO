@@ -85,3 +85,13 @@ func CheckValidAge(person []Person) {
 
 	}
 }
+
+// generics in golang
+
+func Sum[T int | float64](value []T) T {
+	var total T
+	for _, num := range value {
+		total += num
+	}
+	return total
+}

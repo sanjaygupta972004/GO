@@ -11,6 +11,8 @@ type Person struct {
 
 type PersonSlice []Person
 
+type Logger struct{}
+
 func main() {
 	fmt.Println("function in golang")
 	result := Greeter()
@@ -42,16 +44,21 @@ func main() {
 	// 	fmt.Println("Done Payment")
 	// }
 
-	data := PersonSlice{
-		{Name: "Sanjay", Age: 20},
-		{Name: "love", Age: 60},
-		{Name: "Abhi", Age: 200},
-		{Name: "Shivam", Age: 12},
-	}
-	fmt.Println("Execute function to check valid ")
-	CheckValidAge(data)
-	fmt.Println("Done")
+	// data := PersonSlice{
+	// 	{Name: "Sanjay", Age: 20},
+	// 	{Name: "love", Age: 60},
+	// 	{Name: "Abhi", Age: 200},
+	// 	{Name: "Shivam", Age: 12},
+	// }
+	// fmt.Println("Execute function to check valid ")
+	// CheckValidAge(data)
+	// fmt.Println("Done")
 
+	num := []int{3, 2, 6, 4, 32, 343, 4}
+	floatNum := []float64{4, 5.0, 54, 5.0, 5456.04}
+
+	fmt.Printf("value of sum %d\n", Sum(num))
+	fmt.Printf("value of sum float number : %f\n", Sum(floatNum))
 }
 
 func Greeter() string {
