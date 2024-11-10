@@ -11,11 +11,23 @@ type PlayingCard struct {
 	Rank string
 }
 
+type TradingCard struct {
+	CollectableName string
+}
+
+func NewPlayingTradingCard(collectableName string) *TradingCard {
+	return &TradingCard{CollectableName: collectableName}
+}
+
 func NewPlayingCard(suit string, rank string) *PlayingCard {
 	return &PlayingCard{
 		Suit: suit,
 		Rank: rank,
 	}
+}
+
+func (tc *TradingCard) String() string {
+	return fmt.Sprintf("collectable name : %s \n", tc.CollectableName)
 }
 
 func (pc *PlayingCard) String() string {
@@ -46,6 +58,15 @@ func NewPlayingDeckCard() *Deck[*PlayingCard] {
 		for _, rank := range ranks {
 			deck.AddCard(NewPlayingCard(suit, rank))
 		}
+	}
+	return deck
+}
+
+func NewPlayingDeckTradingCard() *Deck[*TradingCard] {
+	collectable := []string{"Sports", "Politics", "App Plateform"}
+	deck := &Deck[*TradingCard]{}
+	for _, coll := range collectable {
+		deck.AddCard(NewPlayingTradingCard(coll))
 	}
 	return deck
 }
