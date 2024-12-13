@@ -47,5 +47,8 @@ func main() {
 	// close(workChh)
 
 	// calling other function
-	Mutex()
+	//Mutex()
+
+	// example
+	exa1()
 }
